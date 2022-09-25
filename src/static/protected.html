@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | mCaptcha DoS Demo Server</title>
+
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta
+      name="description"
+      content="mCaptcha is an AGPL'd, privacy focued, proof-of-work based CAPTCHA System"
+    />
+
+    <meta name="author" content="Aravinth Manivannan" />
+    <meta name="twitter:card" value="summary_large_image" />
+    <meta name="twitter:site" content="@realaravinth" />
+    <meta name="twitter:title" content="Home | mCaptcha DoS Demo Server" />
+    <meta
+      name="twitter:description"
+      content="mCaptcha is an AGPL'd, privacy focued, proof-of-work based CAPTCHA System"
+    />
+    <meta name="twitter:creator" content="@realaravinth" />
+    <meta
+      name="twitter:image"
+      content="https://demo.mcaptcaha.org/assets/img/icon-trans.76A8785EB2A682E34E4389C22DBF2D7EE2FDD7A5A3A7885CC0485603BA890076.png"
+    />
+
+    <meta property="og:title" content="Home | mCaptcha DoS Demo Server" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mcaptcaha.org" />
+    <meta
+      property="og:image"
+      content="https://demo.mcaptcaha.org/assets/img/icon-trans.76A8785EB2A682E34E4389C22DBF2D7EE2FDD7A5A3A7885CC0485603BA890076.png"
+    />
+
+    <meta
+      property="og:description"
+      content="mCaptcha is an AGPL'd, privacy focued, proof-of-work based CAPTCHA System"
+    />
+    <meta
+      property="og:site_name"
+      content="mCaptcha is an AGPL'd, privacy focued, proof-of-work based CAPTCHA System"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="https://demo.mcaptcha.org/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="https://demo.mcaptcha.org/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="https://demo.mcaptcha.org/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="https://demo.mcaptcha.org/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="https://demo.mcaptcha.org/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="https://demo.mcaptcha.org/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="https://demo.mcaptcha.org/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="https://demo.mcaptcha.org/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://demo.mcaptcha.org/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="https://demo.mcaptcha.org/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://demo.mcaptcha.org/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="https://demo.mcaptcha.org/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://demo.mcaptcha.org/favicon-16x16.png"
+    />
+    <link rel="manifest" href="https://demo.mcaptcha.org/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body>
+    <form action="/" method="post">
+      <h1>Demo Form</h1>
+      <label for="name">
+        Name
+        <input type="text" name="name" id="name" />
+      </label>
+      <label for="comment">
+        Comment
+        <input type="password" name="comment" id="comment" />
+      </label>
+      <div id="mcaptcha__widget-container"></div>
+      <script src="/index.js"></script>
+      <script charset="utf-8">
+        let config = {
+          widgetLink: new URL("MCAPTCHA_URL_REPLACEME"),
+        };
+        new mcaptchaGlue.default(config);
+      </script>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <style>
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        justify-content: space-around;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+      }
+
+      label {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+      }
+
+      input {
+        display: block;
+        width: 100%;
+        margin: 5px 0 auto;
+        height: 26px;
+      }
+
+      #mcaptcha__token {
+        display: none;
+      }
+
+      button {
+        background: none;
+        border: none;
+        background: green;
+        color: #fff;
+        height: 26px;
+        border-radius: 5px;
+        margin: 5px 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        align-self: center;
+        margin: 40px auto;
+      }
+
+      #mcaptcha__widget-container {
+        height: 78px;
+        width: 100%;
+        margin: 10px 0;
+      }
+    </style>
+  </body>
+</html>

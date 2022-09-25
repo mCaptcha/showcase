@@ -1,0 +1,24 @@
+debug = false
+source_code = "https://github.com/mCaptcha/showcase"
+
+[server]
+# Please set a unique value, your mCaptcha instance's security depends on this being 
+# unique
+cookie_secret = "Zae0OOxf^bOJ#zN^&k7VozgW&QAx%n02TQFXpRMG4cCU0xMzgu3dna@tQ9dvc&TlE6p*n#kXUdLZJCQsuODIV%r$@o4%770ePQB7m#dpV!optk01NpY0@615w5e2Br4d"
+# The port at which you want authentication to listen to
+# takes a number, choose from 1000-10000 if you dont know what you are doing
+port = 5000
+#IP address. Enter 0.0.0.0 to listen on all availale addresses
+ip= "0.0.0.0" 
+# enter your hostname, eg: example.com
+domain = "localhost"
+# Set true if you have setup TLS with a reverse proxy like Nginx.
+# Does HTTPS redirect and sends additional headers that can only be used if
+# HTTPS available to improve security
+proxy_has_tls = false
+
+[captcha]
+# Please set sitekey retrieved from an mCaptcha instance
+sitekey = "changeme"
+account_secret = "changeme"
+mcaptcha_url = "https://mcaptcha.example.org"
