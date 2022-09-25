@@ -41,7 +41,7 @@ pub mod routes {
             Routes {
                 index,
                 index_js,
-                success
+                success,
             }
         }
     }
@@ -52,7 +52,6 @@ pub fn services(cfg: &mut web::ServiceConfig) {
     cfg.service(success_page);
     cfg.service(protected);
     cfg.service(protected_page);
-
 }
 
 #[actix_web_codegen_const_routes::get(path = "ROUTES.index_js")]
@@ -64,11 +63,10 @@ async fn index_js() -> impl Responder {
 
 #[actix_web_codegen_const_routes::get(path = "ROUTES.index")]
 async fn protected_page(ctx: AppCtx) -> impl Responder {
-        let html = actix_web::http::header::ContentType::html();
+    let html = actix_web::http::header::ContentType::html();
 
-        let page = PROTECTED.replace("MCAPTCHA_URL_REPLACEME", &ctx.captcha_path);
-        HttpResponse::Ok().content_type(html).body(page)
-
+    let page = PROTECTED.replace("MCAPTCHA_URL_REPLACEME", &ctx.captcha_path);
+    HttpResponse::Ok().content_type(html).body(page)
 }
 
 #[actix_web_codegen_const_routes::get(path = "ROUTES.success")]
@@ -92,6 +90,8 @@ async fn protected(payload: web::Form<RegisterProtected>, ctx: AppCtx) -> impl R
     if !ctx.verify_token(&payload.mcaptcha__token).await {
         HttpResponse::BadRequest().body("Invalid Captcha")
     } else {
-        HttpResponse::Found().insert_header((actix_web::http::header::LOCATION, ROUTES.success)).finish()
+        HttpResponse::Found()
+            .insert_header((actix_web::http::header::LOCATION, ROUTES.success))
+            .finish()
     }
 }

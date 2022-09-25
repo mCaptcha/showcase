@@ -84,7 +84,6 @@ impl Settings {
             Err(e) => warn!("couldn't interpret PORT: {}", e),
         }
 
-
         match s.try_into() {
             Ok(val) => Ok(val),
             Err(e) => Err(ConfigError::Message(format!("\n\nError: {}. If it says missing fields, then please refer to https://github.com/mCaptcha/mcaptcha#configuration to learn more about how mcaptcha reads configuration\n\n", e))),
@@ -100,4 +99,3 @@ fn check_url(s: &Config) {
 
     Url::parse(&url).expect("Please enter a URL for source_code in settings");
 }
-
