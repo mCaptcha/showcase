@@ -43,6 +43,6 @@ LABEL org.opencontainers.image.source https://github.com/mCaptcha/dos
 RUN useradd -ms /bin/bash -u 1001 mcaptcha-showcase
 WORKDIR /home/mcaptcha-showcase
 COPY --from=rust /src/target/release/mcaptcha-showcase /usr/local/bin/
-COPY --from=rust /src/config/default.toml /etc/mcaptcha-showcase/config.toml
+COPY --from=rust /src/config/config.toml /etc/mcaptcha-showcase/config.toml
 USER mcaptcha-showcase
 CMD [ "/usr/local/bin/mcaptcha-showcase" ]
