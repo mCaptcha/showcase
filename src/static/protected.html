@@ -129,14 +129,12 @@
         Comment
         <input type="password" name="comment" id="comment" />
       </label>
+      <label data-mcaptcha_url="MCAPTCHA_URL_REPLACEME" for="mcaptcha__token" id="mcaptcha__token-label">
+        mCaptcha authorization token. <a href="https://mcaptcha.org">Instructions</a>.
+        <input type="text" name="mcaptcha__token" id="mcaptcha__token" />
+      </label>
       <div id="mcaptcha__widget-container"></div>
       <script src="/index.js"></script>
-      <script charset="utf-8">
-        let config = {
-          widgetLink: new URL("MCAPTCHA_URL_REPLACEME"),
-        };
-        new mcaptchaGlue.default(config);
-      </script>
 
       <button type="submit">Register</button>
     </form>
@@ -175,9 +173,11 @@
         height: 26px;
       }
 
+      /*
       #mcaptcha__token {
         display: none;
       }
+      */
 
       button {
         background: none;

@@ -77,6 +77,18 @@ impl Settings {
 
         check_url(&s);
 
+        for (var, key) in [ ( "MCAPTCHA__CAPTCHA__SITEKEY", "captcha.sitekey"),
+            ("MCAPTCHA__CAPTCHA__MCAPTCHA_URL", "captcha.mcaptcha_url"),
+            ("MCAPTCHA__CAPTCHA__ACCOUNT__SECRET", "captcha.account_secret"  ),
+        ].iter() {
+        match env::var(var) {
+            Ok(val) => {
+                s.set(key, val).unwrap();
+            }
+            Err(e) => warn!("couldn't interpret env var: {var} to set key: {key}"),
+        }
+        }
+
         match env::var("PORT") {
             Ok(val) => {
                 s.set("server.port", val).unwrap();
