@@ -18,7 +18,7 @@ doc: ## Prepare documentation
 	cargo doc --no-deps --workspace --all-features
 
 docker: ## Build docker images
-	docker build \
+	docker buildx build \
 		-t mcaptcha/showcase:master \
 		-t mcaptcha/showcase:latest \
 		-t mcaptcha/showcase:0.1.0 .
