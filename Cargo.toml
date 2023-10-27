@@ -10,9 +10,9 @@ build = "build.rs"
 actix-web = "4.0.1"
 actix = "0.13"
 actix-http = "3.0.4"
+actix-web-codegen-const-routes = "0.2.0"
 
-sqlx = { version = "0.5.13", features = [ "runtime-actix-rustls", "postgres", "time", "offline" ] }
-argon2-creds = { branch = "master", git = "https://github.com/realaravinth/argon2-creds"}
+argon2-creds = "0.2.3"
 config = "0.11"
 validator = { version = "0.15", features = ["derive"]}
 serde = { version = "1", features = ["derive"]}
@@ -26,8 +26,5 @@ log = "0.4"
 
 reqwest = { version  = "0.11.10", features = ["json"]}
 
-[dependencies.actix-web-codegen-const-routes]
-git = "https://github.com/realaravinth/actix-web-codegen-const-routes"
-
 [build-dependencies]
-sqlx = { version = "0.5.13", features = [ "runtime-actix-rustls", "postgres", "time", "offline" ] }
+sqlx = { version = "0.7.2", features = [ "time",] }
