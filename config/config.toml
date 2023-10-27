@@ -19,6 +19,6 @@ proxy_has_tls = false
 
 [captcha]
 # Please set sitekey retrieved from an mCaptcha instance
-sitekey = "changeme"
-account_secret = "changeme"
-mcaptcha_url = "https://mcaptcha.example.org"
+sitekey = "pHy0AktWyOKuxZDzFfoaewncWecCHo23"
+account_secret = "UO7pDP62xo6yWvIVZk8AZls5dZxt9Vp3"
+mcaptcha_url = "https://demo.mcaptcha.org"
